@@ -34,6 +34,8 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
+doctype_js = {"Employee": "public/js/employee.js"}
+
 # Home Pages
 # ----------
 
@@ -109,6 +111,16 @@ app_license = "MIT"
 #		"on_trash": "method"
 #	}
 # }
+
+doc_events = {
+	"Employee": {
+		# "validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_reason_for_leaving",
+		"validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_create_task"
+	},
+	"Attendance": {
+		"validate": "erpnext_custom.erpnext_custom.doc_event.attendance_event.get_attendance"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
