@@ -119,6 +119,11 @@ doc_events = {
 	},
 	"Attendance": {
 		"validate": "erpnext_custom.erpnext_custom.doc_event.attendance_event.get_attendance"
+	},
+	"Sales Invoice": {
+		# "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_remarks",
+		"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_note",
+		"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.validate_pos"
 	}
 }
 
