@@ -29,4 +29,14 @@ def validate_pos(doc, method):
     # frappe.msgprint("test in validate_pos")
 
 
+@frappe.whitelist()
+def check_allow_discount(doc, method):
+    allow_discount = frappe.db.get_value('Customer', doc.customer, 'allow_discount')
+    if allow_discount == 0:
+        # return "test succeed"
+        return doc.additional_discount_percentage == 0
+        # return doc.apply_discount_on == "" and doc.additional_discount_percentage == 0 and doc.discount_amount == 0
+
+
+
 

@@ -34,7 +34,12 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
-doctype_js = {"Employee": "public/js/employee.js"}
+doctype_js = {
+    "Employee": "public/js/employee.js",
+    "Quotation": "public/js/quotation.js",
+    "Purchase Order": "public/js/purchase_order.js",
+    "Sales Invoice": "public/js/sales_invoice.js",
+}
 
 # Home Pages
 # ----------
@@ -100,6 +105,10 @@ doctype_js = {"Employee": "public/js/employee.js"}
 #	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
+override_doctype_class = {
+    "Purchase Order": "erpnext_custom.erpnext_custom.overrides.purchase_order.PurchaseOrder"
+}
+
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -113,18 +122,18 @@ doctype_js = {"Employee": "public/js/employee.js"}
 # }
 
 doc_events = {
-	"Employee": {
-		# "validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_reason_for_leaving",
-		"validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_create_task"
-	},
-	"Attendance": {
-		"validate": "erpnext_custom.erpnext_custom.doc_event.attendance_event.get_attendance"
-	},
-	"Sales Invoice": {
-		# "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_remarks",
-		"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_note",
-		"validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.validate_pos"
-	}
+    "Employee": {
+        # "validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_reason_for_leaving",
+        "validate": "erpnext_custom.erpnext_custom.doc_event.employee_event.validate_create_task"
+    },
+    "Attendance": {
+        "validate": "erpnext_custom.erpnext_custom.doc_event.attendance_event.get_attendance"
+    },
+    "Sales Invoice": {
+        # "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_remarks",
+        "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_note",
+        "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.validate_pos"
+    }
 }
 
 # Scheduled Tasks
