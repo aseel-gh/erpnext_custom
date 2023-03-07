@@ -133,6 +133,9 @@ doc_events = {
         # "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_remarks",
         "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.add_custom_note",
         "validate": "erpnext_custom.erpnext_custom.doc_event.sales_invoice_event.validate_pos"
+    },
+    "Purchase Invoice": {
+        "on_submit": "erpnext_custom.erpnext_custom.doc_event.purchase_invoice_event.create_purchase_receipt"
     }
 }
 
@@ -216,3 +219,6 @@ doc_events = {
 # auth_hooks = [
 #	"erpnext_custom.auth.validate"
 # ]
+
+
+fixtures = ["Item"]

@@ -11,7 +11,7 @@ frappe.ui.form.on("Sales Invoice",{
 //        if (r.exc){}
        if ( r.message){
            frm.set_value ( "additional_discount_percentage",0);
-           frm.set_df_property('additional_discount_account','disabled', 1);
+           frm.set_df_property('additional_discount_account','read_only', 1);
            }
        }
 });
